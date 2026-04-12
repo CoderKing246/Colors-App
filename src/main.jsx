@@ -11,7 +11,7 @@ import SavesPalette from "./pages/SavesPalette.jsx";
 import { PalettesProvider } from "./context/Palettes.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <HashRouter>
     <PalettesProvider>
       <Routes>
         <Route path="/" element={<RootLayout />}>
@@ -22,5 +22,5 @@ createRoot(document.getElementById("root")).render(
         </Route>
       </Routes>
     </PalettesProvider>
-  </BrowserRouter>,
+  </HashRouter>,
 );

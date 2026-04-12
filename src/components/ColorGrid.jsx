@@ -73,7 +73,7 @@ const ColorGrid = () => {
 
               {/* Hover hint */}
               <span
-                className="absolute bottom-[-20px] text-xs px-2 py-1 m-4 backdrop-blur-2xl text-white opacity-0 group-hover:opacity-100 transition w-20 text-center rounded-2xl
+                className="absolute -bottom-5 text-xs px-2 py-1 m-4 backdrop-blur-2xl text-white opacity-0 group-hover:opacity-100 transition w-20 text-center rounded-2xl
                 border-2 border-gray-500 "
               >
                 Click to copy hex

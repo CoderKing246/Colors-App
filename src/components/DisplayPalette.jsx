@@ -76,7 +76,7 @@ const DisplayPalette = () => {
 
   const handleTailwind = (e) =>{
     navigator.clipboard.writeText(`bg-${hexValue}-900`)
-    showCustomToast(hexValue,"CSS copied")
+    showCustomToast(hexValue,"Tailwind copied")
 
   }
 

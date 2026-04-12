@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HashRouter, Routes, Route } from "react-router-dom";
+// import { HashRouter, Routes, Route } from "react-router-dom";
 import ColorGrid from "./components/ColorGrid.jsx";
 import RootLayout from "./pages/RootLayout.jsx";
 import Generate from "./components/Generate.jsx";

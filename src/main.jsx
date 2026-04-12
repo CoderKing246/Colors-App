@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 // import { HashRouter, Routes, Route } from "react-router-dom";
 import ColorGrid from "./components/ColorGrid.jsx";
 import RootLayout from "./pages/RootLayout.jsx";
@@ -11,8 +11,8 @@ import SavesPalette from "./pages/SavesPalette.jsx";
 import { PalettesProvider } from "./context/Palettes.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <PalettesProvider>
+  <HashRouter>
+    <PalettesProvider basename="/Colors-App">
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index element={<App />} />
@@ -22,5 +22,5 @@ createRoot(document.getElementById("root")).render(
         </Route>
       </Routes>
     </PalettesProvider>
-  </BrowserRouter>,
+  </HashRouter>,
 );

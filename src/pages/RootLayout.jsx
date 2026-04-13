@@ -1,25 +1,25 @@
-import React from 'react'
-import { Outlet, useLocation } from 'react-router-dom'
-import NavBar from '../components/NavBar'
-import ExploreBar from '../components/ExploreBar'
+import React from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import NavBar from "../components/NavBar";
+import ExploreBar from "../components/ExploreBar";
+import { SoundProvider } from "../context/SoundContext";
 
 const RootLayout = () => {
-  const {pathname} = useLocation()
-  if (pathname=="/explore") {
+  const { pathname } = useLocation();
+  if (pathname == "/explore") {
     return (
       <div>
-        <ExploreBar/>
-        <Outlet/>
+          <ExploreBar />
+          <Outlet />
       </div>
-    )      
+    );
   }
   return (
     <div>
-      
-      <NavBar/>
-      <Outlet/>
+      <NavBar />
+      <Outlet />
     </div>
-  )
-}
+  );
+};
 
-export default RootLayout
+export default RootLayout;

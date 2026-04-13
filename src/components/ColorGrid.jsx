@@ -1,11 +1,16 @@
 import React, { use, useEffect, useState } from "react";
 import chroma from "chroma-js";
 import { IoIosArrowBack } from "react-icons/io";
-
+import copySound from "../assets/sounds/copy_sound.m4a" 
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { usePalettes } from "../context/Palettes";
+import { useSound } from "../context/SoundContext";
+import { useFormat } from "../context/CopyFormatContext";
 
 const ColorGrid = () => {
+    const { selectedFormat, setSelectedFormat } = useFormat()
+  
+  const {sound} = useSound();
   const [copiedColor, setCopiedColor] = useState(null);
   const [msg, setMsg] = useState("");
   const [visible, setVisible] = useState(false);
@@ -29,7 +34,8 @@ const ColorGrid = () => {
 
     setCopiedColor(color);
     setMsg(mssg);
-
+    const audio = new Audio(copySound)
+    sound && audio.play()
     // fade out timing
     setTimeout(() => setVisible(false), 900);
     setTimeout(() => setCopiedColor(null), 1600);
@@ -76,7 +82,7 @@ const ColorGrid = () => {
                 className="absolute -bottom-5 text-xs px-2 py-1 m-4 backdrop-blur-2xl text-white opacity-0 group-hover:opacity-100 transition w-20 text-center rounded-2xl
                 border-2 border-gray-500 "
               >
-                Click to copy hex
+                 Copy {selectedFormat.toUpperCase()}
               </span>
             </div>
           </CopyToClipboard>
@@ -85,7 +91,7 @@ const ColorGrid = () => {
 
       {/* BOTTOM BAR */}
       <div className="w-full bg-blue-600 h-12 flex items-center justify-center text-white font-medium">
-        Click a color to copy
+        Click a color to copy in {selectedFormat.toUpperCase()}
       </div>
 
       {/* OVERLAY */}

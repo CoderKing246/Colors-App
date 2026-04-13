@@ -79,39 +79,39 @@ const Home = () => {
   };
 
   return (
-    <div className="space-y-12">
-      {/* 🔥 Hero */}
-      <div className="text-center space-y-4 mt-4">
-        <h1 className="text-3xl md:text-5xl font-bold">
-          🎨 Color Palette Generator
-        </h1>
+      <div className="space-y-12">
+        {/* 🔥 Hero */}
+        <div className="text-center space-y-4 mt-4">
+          <h1 className="text-3xl md:text-5xl font-bold">
+            🎨 Color Palette Generator
+          </h1>
 
-        <p className="text-gray-400 max-w-xl mx-auto">
-          Explore beautiful color palettes from around the world 🌍
-        </p>
-      </div>
-
-      {/* 🎯 Cards */}
-      <div className="flex justify-center">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
-          {palettes.map((palette, index) => (
-            <div
-              key={index}
-              onClick={() => handleClick(palette)}
-              className="cursor-pointer hover:scale-105 transition"
-            >
-              <Card
-                color={palette.colors[0]} // preview color
-                title={palette.name}
-                colors={palette.colors}
-              />
-            </div>
-          ))}
+          <p className="text-gray-400 max-w-xl mx-auto">
+            Explore beautiful color palettes from around the world 🌍
+          </p>
         </div>
-      </div>
 
-      <div className="h-10" />
-    </div>
+        {/* 🎯 Cards */}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
+            {palettes.map((palette, index) => (
+              <div
+                key={index}
+                onClick={() => handleClick(palette)}
+                className="cursor-pointer hover:scale-105 transition"
+              >
+                <Card
+                  color={palette.colors[0]} // preview color
+                  title={palette.name}
+                  colors={palette.colors}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="h-10" />
+      </div>
   );
 };
 
